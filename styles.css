@@ -1,3 +1,50 @@
-.header_title .secondary {
-    background: rgb(255,0,149)
+body {
+    font-family: Roboto, Serif;
+    margin: 0; 
+    background-color: #00000000;
+    color: #000000;
+}
+
+header {
+    background-color: #00000000;
+    color: #000000;
+    padding: 40px;
+    text-align: center;
+}
+
+article {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    background-color: #04fa0410;
+}   
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
 }
