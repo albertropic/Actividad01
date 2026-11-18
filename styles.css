@@ -6,23 +6,58 @@ body {
 }
 
 header {
-    background-color: #00000000;
-    color: #000000;
+    position: relative;
+    overflow: hidden;
     padding: 40px;
     text-align: center;
 }
 
+.bandera {
+    position: absolute;
+    inset: 0;
+    background-image: url("imagenes/bandera.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+    z-index: 0;
+    animation: ondear 4s ease-in-out infinite alternate;
+}
+
+header h1,
+header .subtitle {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes ondear {
+    from {
+        transform: scale(1.02) skewY(-1deg);
+    }
+
+    to {
+        transform: scale(1.08) skewY(1deg);
+    }
+}
+
 article {
-    margin: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #000000;
     border-radius: 20px;
     background-color: #04fa0410;
-}   
+    box-sizing: border-box;
+}
 
 img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 h1 {
@@ -48,3 +83,104 @@ p {
     margin-top: 10px;
     text-align: center;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    background-color: #eeeeee;
+    position:relative;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-top: 3px dashed white;
+    transform: translateY(-50%);
+}
+
+nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    background-color: #eeeeee;
+}
+
+nav a:hover {
+    background-color: #333333;
+    color: white;
+}
+
+.volver {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #eeeeee;
+    color: #333333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.volver:hover {
+    background-color: #555555;
+    color: white;
+
+}
+
+.viaje {
+    display: flex;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.carretera {
+    position: relative;
+    width: 100px;
+    flex-shrink: 0;
+    background-color: #eeeeee;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+}
+
+.carretera::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    border-left: 3px dashed white;
+    transform: translateX(-50%);
+}
+
+.viaje main {
+    flex: 1;
+    min-width: 0;
+}
+
+.coche {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    z-index: 1;
+    transition: top 0.5s ease;
+}
+
